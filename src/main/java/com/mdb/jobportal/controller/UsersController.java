@@ -5,9 +5,13 @@ import com.mdb.jobportal.entity.UserType;
 import com.mdb.jobportal.entity.Users;
 import com.mdb.jobportal.services.UsersService;
 import com.mdb.jobportal.services.UsersTypeService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
@@ -35,6 +39,7 @@ public class UsersController {
         model.addAttribute("user",new Users());
         return "register";
     }
+
     @PostMapping("/register/new")
     public String userRegistration(@Valid Users user, Model model){
 //        System.out.println("User Registration: " + user);
@@ -48,10 +53,22 @@ public class UsersController {
             model.addAttribute("user",new Users());
             return "register";
         }
-
         usersService.addNew(user);
+        return "redirect:dashboard";
+    }
 
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
 
-        return "dashboard";
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request, HttpServletResponse response){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if(authentication != null){
+            new SecurityContextLogoutHandler().logout(request,response,authentication);
+        }
+        return "redirect:/";
     }
 }

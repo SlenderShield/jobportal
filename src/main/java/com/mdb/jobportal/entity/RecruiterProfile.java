@@ -15,7 +15,6 @@ public class RecruiterProfile {
     private Users userId;
 
     private String firstName;
-
     private String lastName;
     private String city;
     private String state;
