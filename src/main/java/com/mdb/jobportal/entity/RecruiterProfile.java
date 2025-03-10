@@ -41,6 +41,10 @@ public class RecruiterProfile {
 
     }
 
+    public RecruiterProfile(Users userId) {
+        this.userId = userId;
+    }
+
     public int getUserAccountId() {
         return userAccountId;
     }

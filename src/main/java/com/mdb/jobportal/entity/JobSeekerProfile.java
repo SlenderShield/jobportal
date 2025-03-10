@@ -13,7 +13,7 @@ public class JobSeekerProfile {
     private int userAccountId;
 
     @OneToOne
-    @JoinColumn(name="user_account_id")
+    @JoinColumn(name = "user_account_id")
     @MapsId
     private Users userId;
 
@@ -25,7 +25,7 @@ public class JobSeekerProfile {
     private String workAuthorization;
     private String employmentType;
     private String resume;
-    @Column(nullable = true,length = 64)
+    @Column(nullable = true, length = 64)
     private String profilePhoto;
 
     @OneToMany(targetEntity = Skills.class, cascade = CascadeType.ALL, mappedBy = "jobSeekerProfile")
