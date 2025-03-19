@@ -14,16 +14,16 @@ public class JobPostActivity {
     private Integer jobPostId;
 
     @ManyToOne
-    @JoinColumn(name="postById",referencedColumnName = "userId")
+    @JoinColumn(name="postedById",referencedColumnName = "userId")
     private Users postedById;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name ="jobLocationId", referencedColumnName = "id")
+    @JoinColumn(name ="jobLocationId", referencedColumnName = "Id")
     private JobLocation jobLocationId;
 
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "jobCompanyId",referencedColumnName = "id")
+    @JoinColumn(name = "jobCompanyId",referencedColumnName = "Id")
     private JobCompany jobCompanyId;
 
     @Transient
