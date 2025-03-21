@@ -16,7 +16,7 @@ public class JobSeekerApply implements Serializable {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId", referencedColumnName = "user_account_id")
-    private JobSeekerApply userId;
+    private JobSeekerProfile userId;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "job", referencedColumnName = "jobPostId")
@@ -30,7 +30,7 @@ public class JobSeekerApply implements Serializable {
     public JobSeekerApply() {
     }
 
-    public JobSeekerApply(Integer id, JobSeekerApply userId, JobPostActivity job, Date applyDate, String coverLetter) {
+    public JobSeekerApply(Integer id, JobSeekerProfile userId, JobPostActivity job, Date applyDate, String coverLetter) {
         this.id = id;
         this.userId = userId;
         this.job = job;
@@ -46,11 +46,11 @@ public class JobSeekerApply implements Serializable {
         this.id = id;
     }
 
-    public JobSeekerApply getUserId() {
+    public JobSeekerProfile getUserId() {
         return userId;
     }
 
-    public void setUserId(JobSeekerApply userId) {
+    public void setUserId(JobSeekerProfile userId) {
         this.userId = userId;
     }
 
