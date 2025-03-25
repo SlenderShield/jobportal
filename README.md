@@ -1,6 +1,7 @@
 # Job Portal
 
-A modern, web-based job portal application built using **Java**, **Spring Boot**, and **Spring MVC**. This project allows employers to post job listings and job seekers to browse and apply for jobs. It provides a user-friendly interface and a robust backend to manage job postings, applications, and user accounts.
+A modern, web-based job portal application built using **Java**, **Spring Boot**, and **Spring MVC**. This project allows employers to post job listings and job seekers to browse and apply for jobs. 
+It provides a user-friendly interface and a robust backend to manage job postings, applications, and user accounts.
 
 ## Table of Contents
 - [Features](#features)
@@ -112,7 +113,6 @@ job-portal/
 ## Usage
 - **Employers**: Register/login, post jobs, and manage applications.
 - **Job Seekers**: Register/login, search for jobs, and apply with a resume.
-- **Admin** (optional): Manage users and job postings (if implemented).
 
 Explore the application at `http://localhost:8080` after starting it.
 
